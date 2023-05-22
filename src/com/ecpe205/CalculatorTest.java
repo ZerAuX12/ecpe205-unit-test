@@ -26,14 +26,14 @@ class CalculatorTest {
     //CREATE A TEST TO TEST isEven
     @Test
     void shouldCheckValueIsEven() {
-         assertEquals(true,calc.isEven(2));
-         assertEquals(false,calc.isEven(1));
+         assertEquals(true,calc.isEven(4));
+         assertEquals(false,calc.isEven(3));
     }
 
     @Test
     void shouldCheckValueIsOdd() {
-         assertEquals(true,calc.isOdd(1));
-         assertEquals(false,calc.isOdd(2));
+         assertEquals(true,calc.isOdd(3));
+         assertEquals(false,calc.isOdd(6));
     }
 
 
