@@ -25,13 +25,13 @@ class CalculatorTest {
 
     //CREATE A TEST TO TEST isEven
     @Test
-    void shouldCheckValueIsEven() {
+    void shouldCheckValueEven() {
          assertEquals(true,calc.isEven(4));
          assertEquals(false,calc.isEven(3));
     }
 
     @Test
-    void shouldCheckValueIsOdd() {
+    void shouldCheckValueOdd() {
          assertEquals(true,calc.isOdd(3));
          assertEquals(false,calc.isOdd(6));
     }
@@ -39,13 +39,16 @@ class CalculatorTest {
 
     @Test
     @DisplayName("Sum 2 encoded values")
-    void shouldSumTwoEncodedValues() {
+    void shouldSumTwoEncodedNumber() {
 
-        // 1 + 2 = 3
-         assertEquals(3, calc.sum(1,2) );
-         assertEquals(9, calc.sum(5,4) );
-         assertEquals(5, calc.sum(3,2) );
-         assertEquals(14, calc.sum(5,9) );
+        // 3 + 7 = 10
+         assertEquals(10, calc.sum(3,10) );
+         // 10 + 3 = 13
+         assertEquals(13, calc.sum(10,3) );
+         //16 + 4 = 20
+         assertEquals(20, calc.sum(16,4) );
+         //1 + 5 = 6
+         assertEquals(6, calc.sum(1,5) );
     }
 
     @ParameterizedTest
@@ -62,28 +65,28 @@ class CalculatorTest {
 
     @ParameterizedTest
     @MethodSource("powerInputValues")
-    void shouldComputePowerMethod (int base, int exponent, int answer) {
+    void shouldRunPowerMethod (int base, int exponent, int answer) {
         assertEquals(answer, calc.power(base, exponent));
     }
 
     @ParameterizedTest
     @MethodSource("factorialValues")
         //I will mark this as a bonus since, ValueSource is not a proper way to test this
-    void shouldComputeFactorial (int value, int ans) {
+    void shouldRunFactorial (int value, int ans) {
         assertEquals(ans, calc.factorial(value));
     }
 
 
     @ParameterizedTest
     @ValueSource(strings = {"civic","kayak","level","racecar","radar"})
-    void shouldComputeFactorial (String value) {
+    void shouldKnowPalindrome (String value) {
         assertTrue(calc.isPalindrome(value));
     }
 
 
     @ParameterizedTest
     @MethodSource("arrayOfIntegerSets")
-    void shouldOrderValues(int[] values) {
+    void shouldBubbleSortValues(int[] values) {
 //        calc.displayValues(values);
         calc.bubbleSort(values);
 //        calc.displayValues(values);
