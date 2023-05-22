@@ -26,14 +26,14 @@ class CalculatorTest {
     //CREATE A TEST TO TEST isEven
     @Test
     void shouldCheckValueIsEven() {
-        assertEquals(true,calc.isEven(2));
-        assertEquals(false,calc.isEven(1));
+         assertEquals(true,calc.isEven(2));
+         assertEquals(false,calc.isEven(1));
     }
 
     @Test
     void shouldCheckValueIsOdd() {
-        assertEquals(true,calc.isOdd(1));
-        assertEquals(false,calc.isOdd(2));
+         assertEquals(true,calc.isOdd(1));
+         assertEquals(false,calc.isOdd(2));
     }
 
 
@@ -42,10 +42,10 @@ class CalculatorTest {
     void shouldSumTwoEncodedValues() {
 
         // 1 + 2 = 3
-        assertEquals(3, calc.sum(1,2) );
-        assertEquals(9, calc.sum(5,4) );
-        assertEquals(5, calc.sum(3,2) );
-        assertEquals(14, calc.sum(5,9) );
+         assertEquals(3, calc.sum(1,2) );
+         assertEquals(9, calc.sum(5,4) );
+         assertEquals(5, calc.sum(3,2) );
+         assertEquals(14, calc.sum(5,9) );
     }
 
     @ParameterizedTest
@@ -80,6 +80,7 @@ class CalculatorTest {
         assertTrue(calc.isPalindrome(value));
     }
 
+
     @ParameterizedTest
     @MethodSource("arrayOfIntegerSets")
     void shouldOrderValues(int[] values) {
@@ -99,6 +100,7 @@ class CalculatorTest {
                 Arguments.of(3,0)
         );
     }
+
 
     static Stream<Arguments> powerInputValues () {
 
